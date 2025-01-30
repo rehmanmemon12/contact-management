@@ -1,0 +1,88 @@
+@if (loading) {
+  <mat-spinner></mat-spinner>
+} @else {
+  @if (contactData) {
+    <div class="details_Wrapper">
+      <div class="inner_Wrapper">
+        <div class="user_Details">
+          <div class="user_Img">
+            <img [src]="contactData.contact.image ?? '/Images/userPic.png'" alt="userPic">
+          </div>
+          <div class="user_Info">
+            <div class="textHolder">
+              <h2>{{ contactData.contact.firstName + ' ' + contactData.contact.lastName }}</h2>
+              <h3>{{ contactData.contact.jobTitle }}</h3>
+            </div>
+            <div class="details_action">
+              <button mat-fab extended class="msg_btn">
+                <mat-icon>forum</mat-icon>
+                Message
+              </button>
+              <button mat-min-fab class="detail_btn">
+                <mat-icon>call</mat-icon>
+              </button>
+              <button mat-min-fab class="detail_btn">
+                <mat-icon>video_label</mat-icon>
+              </button>
+              <button mat-min-fab class="detail_btn">
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="details_Holder">
+          <div class="details_item">
+            <div class="bio"><span>Bio</span></div>
+            <div class="textDetails">
+              <p>
+                When I first got into the advertising, I was looking for the magical combination that would put website
+                into the top search engine rankings
+              </p>
+            </div>
+          </div>
+          <div class="details_item">
+            <div class="bio"><span>Email</span></div>
+            <div class="textDetails">
+              @for (u_email of contactData.emails; track contactData.emails) {
+                <p>{{
+                    u_email.email
+                  }}</p>
+              }
+            </div>
+            <div class="tags">
+              @for (u_email of contactData.emails; track contactData.emails) {
+                <span *ngIf="u_email.primary" class="tag">Primary</span>
+              }
+            </div>
+          </div>
+          <div class="details_item">
+            <div class="bio"><span>Dial</span></div>
+            <div class="textDetails">
+              <p>{{ contactData.contact.phoneNumber }}</p>
+            </div>
+          </div>
+          <div class="details_item">
+            <div class="bio"><span>Social</span></div>
+            <div class="social_btns">
+              <button mat-min-fab class="socialBtn">
+                <img src="/Images/fb.svg" alt="social icon">
+              </button>
+              <button mat-min-fab class="socialBtn">
+                <img src="/Images/pin.svg" alt="social icon">
+              </button>
+              <button mat-min-fab class="socialBtn">
+                <img src="/Images/tw.svg" alt="social icon">
+              </button>
+              <button mat-min-fab class="socialBtn">
+                <img src="/Images/ln.svg" alt="social icon">
+              </button>
+              <button mat-min-fab class="socialBtn">
+                <img src="/Images/g.svg" alt="social icon">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+}

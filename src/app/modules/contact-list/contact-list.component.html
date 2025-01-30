@@ -1,0 +1,65 @@
+@if (loading) {
+  <mat-spinner></mat-spinner>
+} @else {
+  <div class="page_Wrapper">
+    <div class="contact_header">
+      <div class="inner_header">
+        <button mat-min-fab class="menu_Btn" (click)="hideContactDetail()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        </button>
+        <h1>Contacts</h1>
+      </div>
+      <div class="arrows_holder">
+        <button mat-min-fab class="arrow_btn" (click)="prevPage()">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button mat-min-fab class="arrow_btn" (click)="nextPage()">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="contact_body">
+      <div class="search_holder">
+        <form action="#">
+          <div class="form_group">
+            <mat-form-field>
+              <mat-label>Search for a contact</mat-label>
+              <input matInput placeholder="Name, email or phone number" (input)="searchContacts($event)">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+      <div class="contacts_wrapper">
+        @for (contact of visibleContacts; track contact.id) {
+          <div class="contact_holder"
+               [class.selected]="contact === selectedContact"
+               (click)="selectContact(contact)">
+            <div class="user_data">
+              <div class="user_dp">
+                <img [src]="contact.image">
+                <div class="user_status online">
+                </div>
+              </div>
+              <div class="user_bio">
+                <h2>{{ contact.firstName + ' ' + contact.lastName }}</h2>
+                <span>{{ contact.company }}</span>
+              </div>
+            </div>
+            <div class="action_wrapper">
+              <button mat-min-fab class="act_btn">
+                <mat-icon>question_answer</mat-icon>
+              </button>
+              <button mat-min-fab class="act_btn">
+                <mat-icon>call</mat-icon>
+              </button>
+              <button mat-min-fab class="act_btn">
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

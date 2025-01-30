@@ -1,0 +1,10 @@
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    .contact-list{
+        flex: 1;
+    }
+    .contact-details{
+        flex: 2;
+    }
+}

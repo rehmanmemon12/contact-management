@@ -1,0 +1,15 @@
+<main class="main-container">
+  <app-contact-list
+    (contactSelected)="onContactSelected($event)"
+    (contactHideShow)="hideContactDetails()"
+    class="contact-list">
+  </app-contact-list>
+
+  @if (isHide) {
+    <app-contact-details
+      *ngIf="selectedContactId"
+      [contactId]="selectedContactId"
+      class="contact-details">
+    </app-contact-details>
+  }
+</main>

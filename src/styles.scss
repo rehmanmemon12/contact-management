@@ -1,0 +1,569 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+html, body { height: 100%; }
+*{
+  box-sizing: border-box;
+  font-family: var(--main) !important;
+}
+body {
+  margin: 0;
+  font-family: "Lato", serif;
+}
+:root{
+  --main: "Lato", serif;
+  --text: #1A1C1D;
+  --secondary: #8083A3;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{all: unset;}
+// all buttons style
+.menu_Btn{
+  all: unset;
+  background: #fff;
+  border: 1px solid #ECEEF5;
+  color: var(--secondary);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  mat-icon{
+    color: var(--secondary);
+  }
+  &:is(:hover, :focus){
+    background: #4D4CAC1A;
+    color: #6B59CC;
+    mat-icon{
+      color: #6B59CC;
+    }
+  }
+}
+.arrow_btn{
+  all: unset;
+  background: #fff;
+  border: 1px solid #ECEEF5;
+  color: var(--secondary);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  mat-icon{
+    color: var(--secondary);
+  }
+  &:is(:hover, :focus){
+    background: #4D4CAC1A;
+    color: #6B59CC;
+    mat-icon{
+      color: #6B59CC;
+    }
+  }
+}
+.act_btn{
+  all: unset;
+  background: #fff;
+  border: 1px solid #ECEEF5;
+  color: var(--secondary);
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  mat-icon{
+    color: var(--secondary);
+  }
+  &:is(:hover, :focus){
+    background: #4D4CAC1A;
+    color: #6B59CC;
+    mat-icon{
+      color: #6B59CC;
+    }
+  }
+}
+.msg_btn{
+  all: unset;
+  background: #6B59CC;
+  border: 1px solid #6B59CC;
+  color: #fff;
+  min-height: 42px;
+  min-width: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  mat-icon{
+    color: #fff;
+  }
+  &:is(:hover, :focus){
+    background: #fff;
+    color: #6B59CC;
+    mat-icon{
+      color: #6B59CC;
+    }
+  }
+}
+.detail_btn{
+  all: unset;
+  background: #fff;
+  border: 1px solid #ECEEF5;
+  color: var(--secondary);
+  height: 42px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  mat-icon{
+    color: var(--secondary);
+  }
+  &:is(:hover, :focus){
+    background: #4D4CAC1A;
+    color: #6B59CC;
+    mat-icon{
+      color: #6B59CC;
+    }
+  }
+}
+.socialBtn{
+  all: unset;
+  background: #fff;
+  border: 1px solid #ECEEF5;
+  color: var(--secondary);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  img{
+    height: 16px;
+    width: 16px;
+    object-fit: contain;
+  }
+  mat-icon{
+    color: var(--secondary);
+  }
+  &:is(:hover, :focus){
+    background: #4D4CAC1A;
+    color: #6B59CC;
+    mat-icon{
+      color: #6B59CC;
+    }
+  }
+}
+
+h1{
+  font-family: var(--main);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+
+// contact-list.component.scss
+.page_Wrapper{
+  background: #FAF9FF;
+  width: 100%;
+  height: 100vh;
+  padding: 32px 22px;
+  overflow: hidden;
+  .contact_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ECEEF5;
+    padding-bottom: 22px;
+    .inner_header{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+    .arrows_holder{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+  }
+  .contact_body{
+    padding: 32px 0;
+    .search_holder{
+      width: 100%;
+      form{
+        width: 100%;
+        .form_group{
+          mat-form-field{
+            width: 100%;
+            input{
+              all: unset;
+              width: 100%;
+              &::placeholder{
+                font-family: var(--main);
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 19.2px;
+                text-align: left;
+                color: var(--text);
+              }
+            }
+            mat-icon{
+              color: #000;
+              font-size: 18px;
+            }
+          }
+          .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+            background-color: transparent;
+          }
+          .mdc-text-field--filled {
+            all: unset;
+          }
+          .mdc-text-field--filled .mat-mdc-floating-label{
+            font-family: var(--main);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            color: var(--secondary);
+          }
+          .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label {
+            font-family: var(--main);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+    .contacts_wrapper{
+      padding: 20px 0;
+      .contact_holder{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .user_data{
+          display: flex;
+          gap: 18px;
+          align-items: center;
+          justify-content: flex-start;
+          .user_dp{
+            width: 38px;
+            height: 40px;
+            background: #9c9c9c;
+            border-radius: 10px;
+            position: relative;
+            img{
+              object-fit: cover;
+              max-width: 36px;
+              height: 36px;
+              display: inline-block;
+              margin: 0;
+            }
+            .user_status{
+              width: 12px;
+              height: 12px;
+              border-radius: 100%;
+              border: 2px solid #fff;
+              position: absolute;
+              bottom: -3px;
+              right: -3px;
+              &.away{
+                background: #F6933E;
+              }
+              &.online{
+                background: #28C345;
+              }
+              &.offline{
+                background: #FF808B;
+              }
+            }
+          }
+          .user_bio{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h2{
+              color: var(--text);
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 21px;
+              text-align: left;
+            }
+            span{
+              color: var(--secondary);
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 21px;
+              text-align: left;
+            }
+          }
+        }
+        .action_wrapper{
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
+
+// contact-details.component.scss
+.details_Wrapper{
+  padding: 2rem;
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  .inner_Wrapper{
+    width: 100%;
+    .user_Details{
+      display: flex;
+      gap: 25px;
+      .user_Img{
+        width: 114px;
+        height: 114px;
+        background: #e5e5e5;
+        border-radius: 26px;
+        img{
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+      .user_Info{
+        .textHolder{
+          display: flex;
+          flex-direction: column;
+          h2{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 32px;
+            text-align: left;
+            color: var(--text);
+          }
+          h3{
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            text-align: left;
+            margin-bottom: 20px;
+          }
+        }
+        .details_action{
+          display: flex;
+          gap: 6px;
+          .msg_btn{
+            span{
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 19.2px;
+            }
+          }
+        }
+      }
+    }
+    .details_Holder{
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      padding: 40px 0;
+      .details_item{
+        display: flex;
+        gap: 34px;
+        .bio{
+          color: var(--secondary);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 21px;
+          text-align: end;
+          width: 10%;
+          span{
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+          }
+        }
+        .textDetails{
+          color: var(--text);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 21px;
+          width: 90%;
+          p{
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            display: block;
+            width: 100%;
+          }
+        }
+        .tags{
+          span{
+            &.tag{
+              background: #F3F4F9;
+              min-width: 76px;
+              min-height: 28px;
+              border-radius: 8px;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 21px;
+              text-align: center;
+              color: var(--secondary);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        .social_btns{
+          display: flex;
+          gap: 6px;
+        }
+      }
+    }
+  }
+}
+
+// contact-list.component.scss
+.contact-list-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .list-header {
+    margin-bottom: 2rem;
+  }
+
+  .contact-list {
+    display: grid;
+    gap: 1rem;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &.selected, &:hover {
+        background-color: #f5f5f5;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #2196F3;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+      }
+
+      .info {
+        h3 {
+          margin: 0;
+          font-size: 1.1rem;
+        }
+
+        p {
+          margin: 0.25rem 0 0;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+// contact-details.component.scss
+.contact-details {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .avatar-large {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #2196F3;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+  }
+
+  .details-section {
+    h3 {
+      color: #333;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .detail-item {
+      margin: 1.5rem 0;
+
+      label {
+        display: block;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .email-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+
+        .type {
+          background-color: #e0e0e0;
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.8rem;
+        }
+
+        .primary {
+          color: #4CAF50;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
